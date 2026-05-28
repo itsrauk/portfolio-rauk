@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raul Aguilera — Web Designer & Developer from Ribeirão Preto, Brazil. Crafting beautiful digital experiences that convert.">
+  <title>Raul Aguilera — Web Designer & Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233B82F6'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>R</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background elements -->
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">rauk<span class="accent">.</span>dev</a>
+
+      <ul class="nav__menu" id="navMenu" role="list">
+        <li><a href="#about"     class="nav__link" data-en="About"     data-pt="Sobre">About</a></li>
+        <li><a href="#services"  class="nav__link" data-en="Services"  data-pt="Serviços">Services</a></li>
+        <li><a href="#portfolio" class="nav__link" data-en="Portfolio" data-pt="Portfólio">Portfolio</a></li>
+        <li><a href="#contact"   class="nav__link nav__link--cta" data-en="Contact" data-pt="Contato">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="home">
+      <div class="container hero__container">
+
+        <div class="hero__badge reveal">
+          <span class="badge__dot" aria-hidden="true"></span>
+          <span data-en="Available for freelance" data-pt="Disponível para freelance">Available for freelance</span>
+        </div>
+
+        <h1 class="hero__title reveal">
+          <span data-en="Web Designer" data-pt="Web Designer">Web Designer</span><br>
+          <span class="hero__title--gradient" data-en="& Developer" data-pt="& Desenvolvedor">& Developer</span>
+        </h1>
+
+        <p class="hero__subtitle reveal"
+           data-en="I design and build digital experiences that are beautiful, fast, and built to convert — for clients in Brazil and worldwide."
+           data-pt="Crio experiências digitais bonitas, rápidas e focadas em converter — para clientes no Brasil e no mundo.">
+          I design and build digital experiences that are beautiful, fast, and built to convert — for clients in Brazil and worldwide.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a href="#portfolio" class="btn btn--primary" data-en="View My Work" data-pt="Ver Meu Trabalho">View My Work</a>
+          <a href="#contact"   class="btn btn--ghost"   data-en="Let's Talk"    data-pt="Vamos Conversar">Let's Talk</a>
+        </div>
+
+        <div class="hero__stats reveal">
+          <div class="stat">
+            <span class="stat__number">30+</span>
+            <span class="stat__label" data-en="Projects" data-pt="Projetos">Projects</span>
+          </div>
+          <div class="stat__divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat__number">4+</span>
+            <span class="stat__label" data-en="Years" data-pt="Anos">Years</span>
+          </div>
+          <div class="stat__divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat__number">2</span>
+            <span class="stat__label" data-en="Countries" data-pt="Países">Countries</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+    <section class="about section" id="about">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__tag" data-en="About Me"     data-pt="Sobre Mim">About Me</span>
+          <h2 class="section__title" data-en="Design meets development" data-pt="Design encontra desenvolvimento">Design meets development</h2>
+        </div>
+
+        <div class="about__grid">
+
+          <div class="about__content reveal">
+            <p class="about__text"
+               data-en="I'm Raul, a 22-year-old Web Designer and Graphic Designer from Ribeirão Preto, Brazil. With 4+ years of experience and 30+ projects delivered for international clients, I combine clean aesthetics with functional code to create digital products that stand out."
+               data-pt="Sou o Raul, Web Designer e Designer Gráfico de 22 anos de Ribeirão Preto, SP. Com mais de 4 anos de experiência e 30+ projetos entregues para clientes no Brasil e no exterior, combino estética limpa com código funcional para criar produtos digitais que se destacam.">
+              I'm Raul, a 22-year-old Web Designer and Graphic Designer from Ribeirão Preto, Brazil. With 4+ years of experience and 30+ projects delivered for international clients, I combine clean aesthetics with functional code to create digital products that stand out.
+            </p>
+            <p class="about__text"
+               data-en="Previously at Growbo (international digital marketing agency) and Nixem. Fluent in English, I'm comfortable partnering with global teams and clients across different time zones."
+               data-pt="Atuei anteriormente na Growbo (agência internacional de marketing digital) e na Nixem. Com inglês avançado, estou confortável trabalhando com equipes e clientes globais em diferentes fusos horários.">
+              Previously at Growbo (international digital marketing agency) and Nixem. Fluent in English, I'm comfortable partnering with global teams and clients across different time zones.
+            </p>
+            <div class="about__tags" role="list">
+              <span class="tag" role="listitem">Figma</span>
+              <span class="tag" role="listitem">Adobe Photoshop</span>
+              <span class="tag" role="listitem">Illustrator</span>
+              <span class="tag" role="listitem">Premiere</span>
+              <span class="tag" role="listitem">DaVinci Resolve</span>
+              <span class="tag" role="listitem">WordPress</span>
+              <span class="tag" role="listitem">Elementor</span>
+              <span class="tag" role="listitem">GHL</span>
+              <span class="tag" role="listitem">JavaScript</span>
+              <span class="tag" role="listitem">HTML / CSS</span>
+              <span class="tag" role="listitem">Canva</span>
+            </div>
+          </div>
+
+          <div class="about__cards reveal">
+            <div class="about__card glass">
+              <span class="about__card-icon" aria-hidden="true">💼</span>
+              <div>
+                <div class="about__card-label" data-en="Experience" data-pt="Experiência">Experience</div>
+                <div class="about__card-value">4+ <span data-en="years" data-pt="anos">years</span></div>
+              </div>
+            </div>
+            <div class="about__card glass">
+              <span class="about__card-icon" aria-hidden="true">🌍</span>
+              <div>
+                <div class="about__card-label" data-en="Clients" data-pt="Clientes">Clients</div>
+                <div class="about__card-value" data-en="BR & International" data-pt="BR & Internacional">BR & International</div>
+              </div>
+            </div>
+            <div class="about__card glass">
+              <span class="about__card-icon" aria-hidden="true">🚀</span>
+              <div>
+                <div class="about__card-label" data-en="Projects" data-pt="Projetos">Projects</div>
+                <div class="about__card-value">30+</div>
+              </div>
+            </div>
+            <div class="about__card glass">
+              <span class="about__card-icon" aria-hidden="true">🗣️</span>
+              <div>
+                <div class="about__card-label">English</div>
+                <div class="about__card-value" data-en="Advanced" data-pt="Avançado">Advanced</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section class="services section" id="services">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__tag" data-en="What I Do"  data-pt="O Que Faço">What I Do</span>
+          <h2 class="section__title" data-en="Services" data-pt="Serviços">Services</h2>
+        </div>
+
+        <div class="services__grid">
+
+          <!-- Web Design -->
+          <div class="service-card glass reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-en="Web Design"  data-pt="Web Design">Web Design</h3>
+            <p class="service-card__desc"
+               data-en="Websites, landing pages and digital interfaces with Elementor, GHL, WordPress or custom code — focused on conversion."
+               data-pt="Websites, landing pages e interfaces digitais com Elementor, GHL, WordPress ou código customizado — focados em conversão.">
+              Websites, landing pages and digital interfaces with Elementor, GHL, WordPress or custom code — focused on conversion.
+            </p>
+          </div>
+
+          <!-- UI/UX -->
+          <div class="service-card glass reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-en="UI/UX Design"  data-pt="UI/UX Design">UI/UX Design</h3>
+            <p class="service-card__desc"
+               data-en="User-centered interfaces in Figma — wireframes, prototypes, design systems and handoff-ready files."
+               data-pt="Interfaces centradas no usuário no Figma — wireframes, protótipos, design systems e arquivos prontos para entrega.">
+              User-centered interfaces in Figma — wireframes, prototypes, design systems and handoff-ready files.
+            </p>
+          </div>
+
+          <!-- Graphic Design -->
+          <div class="service-card glass reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/>
+                <circle cx="8.5"  cy="7.5"  r="0.5" fill="currentColor"/><circle cx="6.5"  cy="12.5" r="0.5" fill="currentColor"/>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-en="Graphic Design"  data-pt="Design Gráfico">Graphic Design</h3>
+            <p class="service-card__desc"
+               data-en="Visual identity, ads, ebooks, email templates and print materials using Adobe Suite and Canva."
+               data-pt="Identidade visual, anúncios, ebooks, email templates e materiais impressos com Adobe Suite e Canva.">
+              Visual identity, ads, ebooks, email templates and print materials using Adobe Suite and Canva.
+            </p>
+          </div>
+
+          <!-- Video Editing -->
+          <div class="service-card glass reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-en="Video Editing"  data-pt="Edição de Vídeo">Video Editing</h3>
+            <p class="service-card__desc"
+               data-en="Professional video editing for social media, ads and marketing campaigns using DaVinci Resolve and Adobe Premiere."
+               data-pt="Edição profissional de vídeo para redes sociais, anúncios e campanhas de marketing com DaVinci Resolve e Premiere.">
+              Professional video editing for social media, ads and marketing campaigns using DaVinci Resolve and Adobe Premiere.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PORTFOLIO
+    ============================================================ -->
+    <section class="portfolio section" id="portfolio">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__tag" data-en="Selected Work" data-pt="Trabalhos Selecionados">Selected Work</span>
+          <h2 class="section__title" data-en="Portfolio" data-pt="Portfólio">Portfolio</h2>
+        </div>
+
+        <div class="portfolio__grid">
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%)">
+              <span class="project-card__badge" data-en="Website" data-pt="Website">Website</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">BizzBuy Grow Sell</h3>
+              <p class="project-card__tools">WordPress · Elementor · Figma</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #0891b2 0%, #0d9488 100%)">
+              <span class="project-card__badge" data-en="Website" data-pt="Website">Website</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Dr. Randy Nolf Periodontist</h3>
+              <p class="project-card__tools">GHL · Web Design</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #7c3aed 0%, #db2777 100%)">
+              <span class="project-card__badge" data-en="Website" data-pt="Website">Website</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Dr. Puja Jaitly Psychology</h3>
+              <p class="project-card__tools">GHL · UI/UX Design</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #ea580c 0%, #dc2626 100%)">
+              <span class="project-card__badge" data-en="Website" data-pt="Website">Website</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Rentify Auto</h3>
+              <p class="project-card__tools">WordPress · Figma</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #059669 0%, #0891b2 100%)">
+              <span class="project-card__badge" data-en="Branding" data-pt="Branding">Branding</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Calgary Birth Essentials</h3>
+              <p class="project-card__tools">Adobe Illustrator · Figma</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%)">
+              <span class="project-card__badge">Ebook</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">JobTarget Ebook</h3>
+              <p class="project-card__tools">Adobe Illustrator · InDesign</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #0d9488 0%, #059669 100%)">
+              <span class="project-card__badge" data-en="Email Template" data-pt="Email Template">Email Template</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Staftr Email Templates</h3>
+              <p class="project-card__tools">HTML · CSS · Figma</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="project-card__thumb" style="--grad: linear-gradient(135deg, #6d28d9 0%, #3b82f6 100%)">
+              <span class="project-card__badge" data-en="Ads" data-pt="Anúncios">Ads</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Diiiploy Ads</h3>
+              <p class="project-card__tools">Adobe Photoshop · Canva</p>
+              <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="project-card__link" data-en="View on Behance ↗" data-pt="Ver no Behance ↗">View on Behance ↗</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="portfolio__footer reveal">
+          <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="btn btn--ghost"
+             data-en="See All Projects on Behance ↗" data-pt="Ver Todos os Projetos no Behance ↗">
+            See All Projects on Behance ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section class="contact section" id="contact">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__tag" data-en="Get In Touch"    data-pt="Entre em Contato">Get In Touch</span>
+          <h2 class="section__title"   data-en="Let's work together" data-pt="Vamos trabalhar juntos">Let's work together</h2>
+          <p class="section__subtitle" data-en="Have a project in mind? I'd love to hear about it." data-pt="Tem um projeto em mente? Adoraria ouvir sobre ele.">
+            Have a project in mind? I'd love to hear about it.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+
+          <a href="mailto:eusouraul.br@gmail.com" class="contact-card glass reveal">
+            <div class="contact-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card__label">Email</div>
+              <div class="contact-card__value">eusouraul.br@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/5516993310848" target="_blank" rel="noopener noreferrer" class="contact-card glass reveal">
+            <div class="contact-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card__label">WhatsApp</div>
+              <div class="contact-card__value">(16) 99331-0848</div>
+            </div>
+          </a>
+
+          <a href="https://www.behance.net/rauk" target="_blank" rel="noopener noreferrer" class="contact-card glass reveal">
+            <div class="contact-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.891 2.404 1.891.985 0 1.63-.4 1.895-1.071l3.457.609zM15.973 13h5.09c-.06-1.335-.62-2.067-2.461-2.067-1.655 0-2.414.726-2.629 2.067zM8 14.995c.988 0 1.609-.46 1.609-1.481 0-1.009-.616-1.504-1.609-1.504H5.5v2.985H8zM5.5 10.5h2.5c.945 0 1.5-.5 1.5-1.38 0-.87-.535-1.37-1.5-1.37H5.5v2.75zM3 5v14h5.5c2.623 0 4.25-1.365 4.25-3.664 0-1.459-.76-2.693-2.007-3.138C11.5 11.6 12 10.623 12 9.536 12 7.41 10.5 5 7.5 5H3z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card__label">Behance</div>
+              <div class="contact-card__value">behance.net/rauk</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/rauk.dev/" target="_blank" rel="noopener noreferrer" class="contact-card glass reveal">
+            <div class="contact-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-card__label">Instagram</div>
+              <div class="contact-card__value">@rauk.dev</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">rauk<span class="accent">.</span>dev</span>
+      <p class="footer__copy"
+         data-en="Designed &amp; built by Raul Aguilera · Ribeirão Preto, BR"
+         data-pt="Desenvolvido por Raul Aguilera · Ribeirão Preto, BR">
+        Designed &amp; built by Raul Aguilera · Ribeirão Preto, BR
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
