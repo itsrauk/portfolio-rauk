@@ -35,7 +35,7 @@ html  { scroll-behavior: smooth; font-size: 16px; }
 body  {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg);
-  background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.11) 1.5px, transparent 1.5px);
   background-size: 28px 28px;
   color: var(--text-1);
   line-height: 1.6;
@@ -226,6 +226,24 @@ button { font-family: inherit; }
   display: flex; flex-direction: column; justify-content: center;
   padding: 9rem 0 5rem;
   position: relative;
+}
+
+/* Linhas diagonais paralelas sobrepostas ao dot grid */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent 0px,
+    transparent 22px,
+    rgba(255, 255, 255, 0.032) 22px,
+    rgba(255, 255, 255, 0.032) 23px
+  );
+  pointer-events: none;
+  z-index: 0;
+  /* Fade nas bordas para não cortar bruscamente */
+  mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 30%, transparent 100%);
 }
 
 .hero__container {
