@@ -465,7 +465,14 @@ button { font-family: inherit; }
 }
 .about__card:hover { border-color: var(--border-active); transform: translateY(-2px); }
 
-.about__card-icon { font-size: 1.4rem; flex-shrink: 0; }
+.about__card-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
 .about__card-label {
   font-size: 0.7rem;
   color: var(--text-3);
