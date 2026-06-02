@@ -146,7 +146,8 @@ button { font-family: inherit; }
 .nav__link {
   display: inline-block;
   padding: 0.45rem 0.8rem;
-  font-size: 0.875rem;
+  font-family: var(--pixel);
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-2);
   text-decoration: none;
@@ -412,6 +413,18 @@ button { font-family: inherit; }
 /* ================================================================
    ABOUT
 ================================================================ */
+#about {
+  position: relative;
+}
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  pointer-events: none;
+}
+
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -539,11 +552,9 @@ button { font-family: inherit; }
   object-fit: cover;
   object-position: top center;
   transition: transform 0.4s linear, filter 0.3s linear;
-  filter: grayscale(100%) contrast(1.05);
 }
 .project-card:hover .project-card__thumb img {
   transform: scale(1.07);
-  filter: grayscale(60%) contrast(1.05);
 }
 .project-card__thumb::after {
   content: '';
