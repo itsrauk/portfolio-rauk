@@ -288,10 +288,14 @@ button { font-family: inherit; }
 .hero__cursor {
   display: inline-block;
   width: 0.18em; height: 0.8em;
-  background: #00FF00;
+  background: var(--text-1);
   vertical-align: text-bottom;
   margin-left: 3px;
-  animation: px-blink 0.7s steps(2) infinite;
+  animation: cursor-blink 0.7s step-end infinite;
+}
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .hero__subtitle {
