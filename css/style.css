@@ -520,15 +520,7 @@ button { font-family: inherit; }
   overflow: hidden;
   transition: var(--t);
 }
-.service-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: #00FF00;
-  opacity: 0;
-  transition: opacity var(--t);
-}
-.service-card:hover { border-color: var(--border-active); transform: translateY(-5px); background: var(--surface-hover); }
-.service-card:hover::before { opacity: 1; }
+.service-card:hover { border-color: #00FF00; transform: translateY(-5px); background: var(--surface-hover); }
 
 .service-card__icon { color: var(--accent); margin-bottom: 1.25rem; opacity: 0.85; }
 .service-card__title { font-family: Consolas, monospace; font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.6rem; }
