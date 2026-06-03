@@ -37,9 +37,9 @@ body  {
   font-family: Consolas, monospace;
   background-color: var(--bg);
   background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-  background-size: 20px 20px;
+    linear-gradient(rgba(0,255,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,0,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
   color: var(--text-1);
   line-height: 1.6;
   overflow-x: hidden;
@@ -213,7 +213,7 @@ button { font-family: inherit; }
   padding: 9rem 0 5rem;
   position: relative;
   background-image:
-    linear-gradient(to bottom, transparent 60%, #080808 100%),
+    linear-gradient(to bottom, transparent 0%, #080808 100%),
     linear-gradient(rgba(8,8,8,0.50), rgba(8,8,8,0.50)),
     url('../assets/background-hero.jpg');
   background-size: cover;
