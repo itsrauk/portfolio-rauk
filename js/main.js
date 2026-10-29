@@ -1,6 +1,6 @@
 /* ================================================================
-   RAUK.DEV — Portfolio JS
-   Language toggle · Sticky header · Mobile menu · Scroll reveal · Active nav
+   RAUK — Portfolio JS
+   Language toggle · Smooth scroll · Mobile menu · Scroll reveal · Active nav
 ================================================================ */
 
 /* ----------------------------------------------------------------
@@ -9,44 +9,104 @@
 let currentLang = 'en';
 
 const langToggleBtn = document.getElementById('langToggle');
-const langLabel     = document.getElementById('langLabel');
+const langOpts      = langToggleBtn.querySelectorAll('.lang-toggle__opt');
 
 function applyLanguage(lang) {
   currentLang = lang;
-  langLabel.textContent = lang.toUpperCase();
   document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+
+  langOpts.forEach(opt => opt.classList.toggle('is-active', opt.dataset.lang === lang));
 
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (text !== null) el.textContent = text;
   });
 
-  // Update page title
   document.title = lang === 'en'
-    ? 'Raul Aguilera — Web Designer & Developer'
-    : 'Raul Aguilera — Web Designer & Desenvolvedor';
+    ? 'Raul Aguilera · Web Designer & Developer'
+    : 'Raul Aguilera · Web Designer & Desenvolvedor';
+
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  placeMoon();
 }
+
+/* ----------------------------------------------------------------
+   HERO MOON — keep it just right of the title (title width varies by language)
+---------------------------------------------------------------- */
+function placeMoon() {
+  const title = document.getElementById('heroTitle');
+  if (title) title.parentElement.style.setProperty('--title-w', title.offsetWidth + 'px');
+}
+
+window.addEventListener('resize', placeMoon);
+if (document.fonts) document.fonts.ready.then(placeMoon);
+
 
 langToggleBtn.addEventListener('click', () => {
   applyLanguage(currentLang === 'en' ? 'pt' : 'en');
 });
 
-// Detect browser language on load
+// Saved choice first, then browser language
 (function () {
-  const browserLang = navigator.language || navigator.userLanguage || '';
-  if (browserLang.toLowerCase().startsWith('pt')) {
-    applyLanguage('pt');
-  }
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  const browserLang = (navigator.language || '').toLowerCase();
+  applyLanguage(saved || (browserLang.startsWith('pt') ? 'pt' : 'en'));
 })();
 
 /* ----------------------------------------------------------------
-   STICKY HEADER
+   SMOOTH SCROLL (Lenis) — skipped for reduced motion or if the CDN fails
 ---------------------------------------------------------------- */
-const header = document.getElementById('header');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let lenis = null;
 
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+if (!reduceMotion && window.Lenis) {
+  lenis = new Lenis({ lerp: 0.09 });
+  requestAnimationFrame(function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  });
+}
+
+// In-page links glide to their section
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target || !lenis) return;
+    e.preventDefault();
+    lenis.start();   // the mobile menu stops scrolling while open
+    lenis.scrollTo(target, { duration: 1.4 });
+  });
+});
+
+/* ----------------------------------------------------------------
+   SCROLL EFFECTS — progress bar, hero parallax, line-art rotation
+---------------------------------------------------------------- */
+const root        = document.documentElement;
+const hero        = document.querySelector('.hero');
+const progressBar = document.getElementById('progressBar');
+
+function onScroll(y) {
+  const max = root.scrollHeight - window.innerHeight;
+  progressBar.style.setProperty('--progress', max > 0 ? (y / max).toFixed(4) : 0);
+  hero.style.setProperty('--hp', Math.min(y / hero.offsetHeight, 1).toFixed(4));
+  root.style.setProperty('--sy', Math.round(y));
+}
+
+if (lenis) lenis.on('scroll', ({ scroll }) => onScroll(scroll));
+else window.addEventListener('scroll', () => onScroll(window.scrollY), { passive: true });
+onScroll(window.scrollY);
+
+/* ----------------------------------------------------------------
+   INTRO — start the hero entrance once the fonts are in
+---------------------------------------------------------------- */
+function startIntro() { requestAnimationFrame(() => root.classList.add('is-ready')); }
+
+if (document.fonts) {
+  Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 1200))]).then(startIntro);
+} else {
+  startIntro();
+}
 
 /* ----------------------------------------------------------------
    MOBILE MENU
@@ -59,26 +119,25 @@ function closeMenu() {
   navMenu.classList.remove('open');
   hamburger.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
+  if (lenis) lenis.start();
 }
 
 hamburger.addEventListener('click', () => {
-  const isOpen = navMenu.classList.contains('open');
-  if (isOpen) {
+  if (navMenu.classList.contains('open')) {
     closeMenu();
   } else {
     hamburger.classList.add('active');
     navMenu.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
   }
 });
 
-// Close on link click
 navMenu.querySelectorAll('.nav__link').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
 
-// Close on ESC
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeMenu();
 });
@@ -86,21 +145,15 @@ document.addEventListener('keydown', e => {
 /* ----------------------------------------------------------------
    SCROLL REVEAL (IntersectionObserver)
 ---------------------------------------------------------------- */
-const revealEls = document.querySelectorAll('.reveal');
-
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
     // Stagger siblings inside the same parent
     const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
-    const idx = siblings.indexOf(entry.target);
-    const delay = Math.min(idx * 90, 450); // cap stagger at 450ms
+    const delay = Math.min(siblings.indexOf(entry.target) * 90, 450);
 
-    setTimeout(() => {
-      entry.target.classList.add('visible');
-    }, delay);
-
+    setTimeout(() => entry.target.classList.add('visible'), delay);
     revealObserver.unobserve(entry.target);
   });
 }, {
@@ -108,13 +161,12 @@ const revealObserver = new IntersectionObserver((entries) => {
   rootMargin: '0px 0px -40px 0px',
 });
 
-revealEls.forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 /* ----------------------------------------------------------------
    ACTIVE NAV LINK (highlight on scroll)
 ---------------------------------------------------------------- */
-const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav__link:not(.nav__link--cta)');
+const navLinks = document.querySelectorAll('.nav__link');
 
 const activeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -125,8 +177,8 @@ const activeObserver = new IntersectionObserver((entries) => {
     });
   });
 }, {
-  threshold: 0.35,
-  rootMargin: '-80px 0px 0px 0px',
+  // A section is active while it crosses the middle of the viewport
+  rootMargin: '-50% 0px -50% 0px',
 });
 
-sections.forEach(s => activeObserver.observe(s));
+document.querySelectorAll('section[id]').forEach(s => activeObserver.observe(s));
